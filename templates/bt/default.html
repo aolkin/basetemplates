@@ -7,12 +7,12 @@
      id="bt-container">
   <a href="#bt-content" class="sr-only sr-only-focusable">
     Skip to page content</a>
-  <header>
+  <header class="bt-header">
     {% block header %}
     {% if BT_header_image %}
       {% if BT_header_url %}<a href="{% url BT_header_url %}">{% endif %}
       <img src="{% static BT_header_image %}" id="bt-logo"
-	   class="responsive-img">
+	   class="img-responsive img-fluid">
       {% if BT_header_url %}</a>{% endif %}
     {% endif %}
     {% endblock %}
@@ -23,11 +23,12 @@
   <footer class="bt-footer">
     {% block footer %}
     <hr>
-    &copy;{% now "Y" %} {% setting "BT_FOOTER_OWNER" %}
+    <div>&copy;{% now "Y" %} {% setting "BT_FOOTER_OWNER" %}
     {% if BT_footer_site %}|
     <a href="{{ BT_footer_site }}">
       {{ BT_footer_site|cut:"http://"|cut:"https://" }}</a>
-    {% endif %}
+    {% endif %}</div>
+    {% block extra_footer %}{% endblock %}
     {% endblock %}
   </footer>
 </div>

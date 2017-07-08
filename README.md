@@ -1,6 +1,10 @@
 # Base Templates
 Base templates for starting a Django project with Bootstrap.
 
+This project attempts to simultaneously support versions 3 and 4 by using
+classes from both where possible. However, where only one usage is possible,
+Bootstrap 4 will be preferred.
+
 ## Inheritable Templates
 
 Each template is designed to be inherited from, and provides a number of
@@ -21,26 +25,32 @@ Each template inherits from the one above it. Blocks provided:
 
 ### base.html
 
-- title
-- body
-- extra_scripts
+- `title`
+- `body`
+- `extra_scripts`
 
 ### default.html
 
-This template consumes the `body` block from above, and provides three new
+This template consumes the `body` block from above, and provides four new
 blocks within it.
 
-- header
-- footer
-- content
+- `header`
+- `footer`
+- `content`
+- `extra_footer`
+
+The first two blocks have content, the last two are designed to be extended.
+Do not attempt to extend `extra_footer` if you overwrite `footer`.
 
 ### sidebar.html
+
+*// TODO*
 
 This template consumes the `content` block from above, and provides two new
 blocks within it.
 
-- sidebar
-- main
+- `sidebar`
+- `main`
 
 ## Settings
 

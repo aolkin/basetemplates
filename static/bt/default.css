@@ -8,6 +8,10 @@
     margin-top: 2em;
 }
 
+.bt-header {
+    margin-top: 1em;
+}
+
 .bt-header-btn {
     position: absolute;
     top: 1em;
