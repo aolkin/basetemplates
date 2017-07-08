@@ -7,6 +7,7 @@
 
     {% if BT_viewport_scale %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endif %}
     {% _bt_style "https://maxcdn.bootstrapcdn.com/bootstrap/{}/css/bootstrap.min.css" "bootstrap" %}
+    <link rel="icon" href="{% setting 'BT_FAVICON_URL' %}" />
     <link rel="stylesheet" href="{% static 'bt/default.css' %}" />
     {% _bt_app_style %}
     {% for path in BT_styles %}

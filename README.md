@@ -60,6 +60,7 @@ blocks within it.
 ### Settings used by the base template
 
 - `BT_SITE_TITLE`: the part after the last | in page titles
+- `BT_FAVICON_URL`
 - `BT_CSS_FILES`: paths to static css files for the site
 - `BT_JS_FILES`: paths to static js files for the site
 - `BT_BOOTSTRAP_VERSION`: the version of Bootstrap to link to [3.3.7].

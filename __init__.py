@@ -9,7 +9,8 @@ DEFAULT_SETTINGS = {
     "BT_CSS_FILES": [],
     "BT_CONTAINER_FLUID": False,
     "BT_INCLUDE_MESSAGES": True,
-    "BT_MESSAGES_COLUMN_SPEC": "col-md-6"
+    "BT_MESSAGES_COLUMN_SPEC": "col-md-6",
+    "BT_FAVICON_URL": "/favicon.ico"
 }
 
 def get_setting(name, context={}):
