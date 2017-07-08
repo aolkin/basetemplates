@@ -10,7 +10,7 @@
     <li><a href="{% url 'admin:index' %}">Site Admin</a></li>
     {% endif %}
     <li role="separator" class="divider dropdown-divider"></li>
-    <li><a href="{% url 'logout' %}">Logout</a></li>
+    <li><a href="{% url BT_user_logout %}">Logout</a></li>
     {% else %}
     {% block user_authenticated_actions %}{% endblock %}
     {% endif %}

@@ -27,4 +27,5 @@ def context_processor(request):
     context["BT_header_url"] = get_setting("BT_HEADER_URL")
     context["BT_header_image"] = get_setting("BT_HEADER_IMAGE")
     context["BT_footer_site"] = get_setting("BT_FOOTER_SITE")
+    context["BT_user_logout"] = get_setting("LOGOUT_URL")
     return context
