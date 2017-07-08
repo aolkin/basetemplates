@@ -1,0 +1,16 @@
+.bt-footer {
+    margin: 1em;
+    text-align: center;
+}
+
+.bt-footer hr {
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
+
+.bt-header-btn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    margin: 0 !important;
+}

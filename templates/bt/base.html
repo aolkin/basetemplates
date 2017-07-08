@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
 {% load bt %}
-{% _bt_prep_resources %}
 <html>
   <head>
-    {% if BT_site_title %}
-    <title>{% block title %}{% endblock %} | {{ BT_site_title }}</title>
-    {% else %}
-    <title>{% block title %}{% endblock %}</title>
-    {% endif %}
+    <title>{% block title %}{% endblock %}{{ BT_site_title }}</title>
 
     {% if BT_viewport_scale %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endif %}
     {% _bt_style "https://maxcdn.bootstrapcdn.com/bootstrap/{}/css/bootstrap.min.css" "bootstrap" %}

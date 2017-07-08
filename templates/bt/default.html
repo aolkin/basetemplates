@@ -1,0 +1,34 @@
+{% extends "bt/base.html" %}
+{% load static %}
+{% load bt %}
+
+{% block body %}
+<div class="container{% if BT_BS_container_fluid %}-fluid{% endif %}"
+     id="bt-container">
+  <a href="#bt-content" class="sr-only sr-only-focusable">
+    Skip to page content</a>
+  <header>
+    {% block header %}
+    {% if BT_header_image %}
+      {% if BT_header_url %}<a href="{% url BT_header_url %}">{% endif %}
+      <img src="{% static BT_header_image %}" id="bt-logo"
+	   class="responsive-img">
+      {% if BT_header_url %}</a>{% endif %}
+    {% endif %}
+    {% endblock %}
+  </header>
+  <a name="bt-content"></a>
+  {% block content %}
+  {% endblock %}
+  <footer class="bt-footer">
+    {% block footer %}
+    <hr>
+    &copy;{% now "Y" %} {% setting "BT_FOOTER_OWNER" %}
+    {% if BT_footer_site %}|
+    <a href="{{ BT_footer_site }}">
+      {{ BT_footer_site|cut:"http://"|cut:"https://" }}</a>
+    {% endif %}
+    {% endblock %}
+  </footer>
+</div>
+{% endblock %}
