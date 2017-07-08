@@ -10,9 +10,10 @@
   <header class="bt-header">
     {% block header %}
     {% if BT_header_image %}
-      {% if BT_header_url %}<a href="{% url BT_header_url %}">{% endif %}
-      <img src="{% static BT_header_image %}" id="bt-logo"
-	   class="img-responsive img-fluid">
+      {% if BT_header_url and not BT_no_header_link %}
+      <a href="{% url BT_header_url %}">{% endif %}
+	<img src="{% static BT_header_image %}" id="bt-logo"
+	     class="img-responsive img-fluid">
       {% if BT_header_url %}</a>{% endif %}
     {% endif %}
     {% endblock %}

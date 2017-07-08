@@ -34,6 +34,9 @@ Each template inherits from the one above it. Blocks provided:
 This template consumes the `body` block from above, and provides four new
 blocks within it.
 
+To disable the header image link for an individual page, set context variable
+`BT_no_header_link` to True.
+
 - `header`
 - `footer`
 - `content`
