@@ -73,15 +73,21 @@ blocks within it.
 
 ### Settings used by the default template
 
-Except for the first, these settings will only be used if the respective block
-is not overridden.
+Except for the first two, these settings will only be used if the respective
+block is not overridden.
 
 - `BT_CONTAINER_FLUID`: determines if the root container is fluid or not
   [False].
+- `BT_INCLUDE_MESSAGES`: automatically include the `messages.html` piece
+  [True].
 - `BT_FOOTER_OWNER`: copyright the current year for this text will be shown
 - `BT_FOOTER_SITE`: will become a link
 - `BT_HEADER_IMAGE`: passed to `static`
 - `BT_HEADER_URL`: passed to `url`
+
+This template will also respond to the context variable `BT_hide_messages`,
+allowing the message piece to be hidden on a per-page basis if enabled
+globally.
 
 ## Template Pieces
 
@@ -91,6 +97,8 @@ a certain context variable to be provided.
 ### messages.html
 
 Renders the contents of the `messages` context variable using Bootstrap.
+It uses the setting `BT_MESSAGES_COLUMN_SPEC` to control the width of the
+displayed alerts, via a bootstrap column class such as `col-md-6`.
 
 ### title.html
 
@@ -108,7 +116,8 @@ logged in).
 
 ### setting
 
-Retrieves a Django setting.
+Retrieves a Django setting. If a context variable exists with the exact same
+name, that will be returned instead, to allow per-view overrides.
 
 ### script
 

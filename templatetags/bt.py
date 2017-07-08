@@ -7,9 +7,9 @@ from .. import get_setting
 
 register = template.Library()
     
-@register.simple_tag
-def setting(name):
-    return mark_safe(get_setting(name))
+@register.simple_tag(takes_context=True)
+def setting(context, name):
+    return mark_safe(get_setting(name, context))
 
 def res_extra(src, integrity=""):
     crossorigin = (' crossorigin="anonymous"' if src.startswith("https://")

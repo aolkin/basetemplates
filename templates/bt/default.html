@@ -19,6 +19,9 @@
     {% endblock %}
   </header>
   <a name="bt-content"></a>
+  {% if BT_include_messages and not BT_hide_messages %}
+  {% include "bt/messages.html" %}
+  {% endif %}
   {% block content %}
   {% endblock %}
   <footer class="bt-footer">
