@@ -113,6 +113,9 @@ It provides the `user_menu_actions` and `user_authenticated_actions` blocks
 for extension (the former will always be shown, the latter only when a user is
 logged in).
 
+It expects the admin interface to be enabled, and the `LOGOUT_URL` setting
+to be defined.
+
 ## Template Tags
 
 ### setting

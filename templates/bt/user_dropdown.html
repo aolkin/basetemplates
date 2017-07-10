@@ -1,18 +1,18 @@
-<div class="btn-group bt-header-btn">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Welcome{% if request.user.is_authenticated %}, {{ request.user.get_short_name }}{% endif %} <span class="caret"></span>
+<div class="dropdown bt-header-dropdown">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+    Welcome{% if request.user.is_authenticated %}, {{ request.user.get_short_name }}{% endif %}
   </button>
-  <ul class="dropdown-menu">
+  <div class="dropdown-menu">
     {% if request.user.is_authenticated %}
-    {% block user_menu_actions %}{% endblock %}
-    {% if request.user.is_staff %}
-    <li role="separator" class="divider dropdown-divider"></li>
-    <li><a href="{% url 'admin:index' %}">Site Admin</a></li>
-    {% endif %}
-    <li role="separator" class="divider dropdown-divider"></li>
-    <li><a href="{% url BT_user_logout %}">Logout</a></li>
-    {% else %}
     {% block user_authenticated_actions %}{% endblock %}
+    {% if request.user.is_staff %}
+    <div class="dropdown-divider"></div>
+    <a href="{% url 'admin:index' %}" class="dropdown-item">Site Admin</a>
     {% endif %}
-  </ul>
+    <div class="dropdown-divider"></div>
+    <a href="{% url BT_user_logout %}" class="dropdown-item">Logout</a>
+    {% else %}
+    {% block user_menu_actions %}{% endblock %}
+    {% endif %}
+  </div>
 </div>
