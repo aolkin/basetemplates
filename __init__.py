@@ -5,6 +5,7 @@ DEFAULT_SETTINGS = {
     "BT_BOOTSTRAP_VERSION": "3.3.7",
     "BT_JQUERY_VERSION": "3.2.1",
     "BT_JQUERY_JS_INTEGRITY": "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",
+    "BT_TYPEAHEAD_VERSION": "0.11.1",
     "BT_JS_FILES": [],
     "BT_CSS_FILES": [],
     "BT_CONTAINER_FLUID": False,
@@ -34,4 +35,5 @@ def context_processor(request):
     context["BT_footer_site"] = get_setting("BT_FOOTER_SITE")
     context["BT_user_logout"] = get_setting("LOGOUT_URL")
     context["BT_include_messages"] = get_setting("BT_INCLUDE_MESSAGES")
+    context["SETTINGS"] = settings
     return context

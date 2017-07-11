@@ -15,15 +15,18 @@ For all templates to function properly, a CSS file is included, and requires
 that static files are set up properly. The request context processor must also
 be enabled for the templates to function.
 
-Additionally, the base template expects static files to be set up, and will
-search for static files of the form `{app_name}.js` and
-`{app_name}/{url_name}.js`and include them if found.
-
 Lastly, `basetemplates.context_processor` must be enabled.
+
+> Note: the context processor mainly allows the templates to function properly,
+> but also provides a `SETTINGS` context variable that simply refers to the
+> Django settings object.
 
 Each template inherits from the one above it. Blocks provided:
 
 ### base.html
+
+This template will search for static files of the form `{app_name}.js`,
+`{app_name}.css`, and `{app_name}/{url_name}.js`, and include them if found.
 
 - `title`
 - `body`
@@ -70,6 +73,8 @@ blocks within it.
 - `BT_TETHER_JS_INTEGRITY`
 - `BT_JQUERY_VERSION`: the version of jQuery to link to [3.2.1].
 - `BT_JQUERY_JS_INTEGRITY` [set by default]
+- `BT_TYPEAHEAD_VERSION`: the version of typeahead.js to load from cdnjs
+  [0.11.1].
 - `BT_VIEWPORT_SCALE`: enable the viewport meta tag [True]
 
 ### Settings used by the default template
