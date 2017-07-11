@@ -1,4 +1,5 @@
 from django import template
+from django.conf import settings
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html
 from django.contrib.staticfiles import finders
