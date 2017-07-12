@@ -53,7 +53,7 @@ def _bt_app_style(context):
     if match.app_name:
         fn = finders.find(match.app_name + ".css")
         if fn:
-            return style(fn)
+            return style(settings.STATIC_URL + "/" + match.app_name + ".css")
     return ""
 
 @register.simple_tag(takes_context=True)
