@@ -76,8 +76,8 @@ blocks within it.
 - `BT_TETHER_JS_INTEGRITY`
 - `BT_JQUERY_VERSION`: the version of jQuery to link to [3.2.1].
 - `BT_JQUERY_JS_INTEGRITY` [set by default]
-- `BT_TYPEAHEAD_VERSION`: the version of typeahead.js to load from cdnjs
-  [0.11.1].
+- `BT_TYPEAHEAD_VERSION`: the version of bootstrap-3-typeahead to load from
+  cdnjs [4.0.2].
 - `BT_VIEWPORT_SCALE`: enable the viewport meta tag [True]
 
 ### Settings used by the default template
