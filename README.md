@@ -21,12 +21,15 @@ Lastly, `basetemplates.context_processor` must be enabled.
 > but also provides a `SETTINGS` context variable that simply refers to the
 > Django settings object.
 
-Each template inherits from the one above it. Blocks provided:
+Each template inherits from the one above it. Below are listed the blocks
+provided by each template.
 
 ### base.html
 
 This template will search for static files of the form `{app_name}.js`,
 `{app_name}.css`, and `{app_name}/{url_name}.js`, and include them if found.
+It will also add `app-{app_name}` and `view-{url_name}` classes to the body
+automatically.
 
 - `title`
 - `body`

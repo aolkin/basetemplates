@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static path %}" />
     {% endfor %}
   </head>
-  <body>
+  <body class="app-{{ request.resolver_match.app_name }} view-{{ request.resolver_match.url_name }}">
     {% block body %}{% endblock %}
 
     {% _bt_script "https://code.jquery.com/jquery-{}.min.js" "jquery" %}
