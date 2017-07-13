@@ -16,14 +16,18 @@
 	     class="img-responsive img-fluid">
       {% if BT_header_url %}</a>{% endif %}
     {% endif %}
+    {% block extra_header %}{% endblock %}
     {% endblock %}
   </header>
+  {% block BT_inner_page %}
   <a name="bt-content"></a>
   {% if BT_include_messages and not BT_hide_messages %}
   {% include "bt/messages.html" %}
   {% endif %}
+  <main class="bt-content">
   {% block content %}
   {% endblock %}
+  </main>
   <footer class="bt-footer">
     {% block footer %}
     <hr>
@@ -35,5 +39,6 @@
     {% block extra_footer %}{% endblock %}
     {% endblock %}
   </footer>
+  {% endblock %}
 </div>
 {% endblock %}

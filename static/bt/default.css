@@ -10,14 +10,46 @@
 .bt-header {
     margin: 1em auto 2em;
 }
+.bt-header.navbar {
+    margin-bottom: 1em;
+}
 
 .bt-header-dropdown {
     position: absolute;
-    top: 1em;
+    top: 0;
     right: 1em;
     margin: 0 !important;
 }
 
 .bt-messages {
     margin-bottom: 1em;
+}
+
+.bt-sidebar {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    padding: 0.5em 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-left-width: 0;
+}
+
+.bt-sidebar .nav-item {
+    width: 100%;
+}
+
+.bt-sidebar .nav-link {
+    border-radius: 0;
+    padding: 0 1em 0 2em;
+}
+
+.bt-sidebar .nav-link>h5 {
+    padding: 0.5em 0;
+}
+
+.bt-sidebar .bt-title-link {
+    padding: 0 1em;
 }

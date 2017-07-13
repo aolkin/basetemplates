@@ -46,20 +46,24 @@ To disable the header image link for an individual page, set context variable
 - `header`
 - `footer`
 - `content`
+- `extra_header`
 - `extra_footer`
 
-The first two blocks have content, the last two are designed to be extended.
-Do not attempt to extend `extra_footer` if you overwrite `footer`.
+The first two blocks have content, the last three are designed to be extended.
+Do not attempt to extend the `extra_` blocks if you overwrite their bases.
 
 ### sidebar.html
 
-*// TODO*
+This template renders using a `fluid-container`, and provides a new `sidebar`
+block in addition to the blocks provided by `default.html`
 
-This template consumes the `content` block from above, and provides two new
-blocks within it.
+By default, the `sidebar` block will render the contents of the template
+variable `sidebar_menus`, and provide the additional block `sidebar_extra`
+at the bottom.
 
-- `sidebar`
-- `main`
+The template expects `sidebar_menu` to be an `dict`, mapping menu names to
+iterables of menu items. Each item may then optionally have `url` and
+`active` attributes, and should have a `name` attribute.
 
 ## Settings
 
@@ -123,6 +127,9 @@ logged in).
 
 It expects the admin interface to be enabled, and the `LOGOUT_URL` setting
 to be defined.
+
+This piece works well when placed in the `extra_header` block from
+`default.html`.
 
 ## Template Tags
 

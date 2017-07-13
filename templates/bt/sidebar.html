@@ -1,0 +1,38 @@
+{% extends "bt/default.html" %}
+
+{% block body %}
+<a href="#bt-content" class="sr-only sr-only-focusable">
+  Skip to page content</a>
+<header class="bt-header bt-sidebar-header navbar">
+  {% block header %}{{ block.super }}{% endblock %}
+</header>
+<div class="container-fluid .bt-sidebar-container" id="bt-container">
+  {% block BT_inner_page %}
+  <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded bt-sidebar rounded-right">
+    {% block sidebar %}
+    {% for title, menu in sidebar_menu.items %}
+    {% if title %}<h5 class="container-fluid mt-3">{{ title }}</h5>{% endif %}
+    <ul class="nav nav-pills flex-column">
+      {% for item in menu %}
+      {% block sidebar_menu_item %}
+      <li class="nav-item">
+	<a class="nav-link{% if item.active %} active{% endif %}{% if not title %} bt-title-link{% endif %}"
+	   {% if item.url %}href="{{ item.url }}"{% endif %}>
+	  {% if not title %}<h5 class="mb-2 mt-2">{% endif %}
+	    {{ item.name }}
+	  {% if not title %}</h5>{% endif %}
+	</a>
+      </li>
+      {% endblock %}
+      {% endfor %}
+    </ul>
+    {% endfor %}
+    {% block sidebar_extra %}{% endblock %}
+    {% endblock %}
+  </nav>
+  <div class="col-sm-9 col-offset-sm-3 col-md-10 offset-md-2 pt-3 bt-sidebar-content">
+    {{ block.super }}
+  </div>
+  {% endblock %}
+</div>
+{% endblock %}
