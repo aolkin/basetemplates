@@ -6,6 +6,7 @@ DEFAULT_SETTINGS = {
     "BT_JQUERY_VERSION": "3.2.1",
     "BT_JQUERY_JS_INTEGRITY": "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",
     "BT_TYPEAHEAD_VERSION": "4.0.2",
+    "BT_SELECT2_VERSION": "4.0.3",
     "BT_JS_FILES": [],
     "BT_CSS_FILES": [],
     "BT_CONTAINER_FLUID": False,

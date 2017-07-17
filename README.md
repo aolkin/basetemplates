@@ -82,6 +82,7 @@ iterables of menu items. Each item may then optionally have `url` and
 - `BT_JQUERY_JS_INTEGRITY` [set by default]
 - `BT_TYPEAHEAD_VERSION`: the version of bootstrap-3-typeahead to load from
   cdnjs [4.0.2].
+- `BT_SELECT2_VERSION`: the version of Select2 to load from cdnjs [4.0.3].
 - `BT_VIEWPORT_SCALE`: enable the viewport meta tag [True]
 
 ### Settings used by the default template
