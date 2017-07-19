@@ -82,6 +82,8 @@ iterables of menu items. Each item may then optionally have `url` and
 - `BT_JQUERY_JS_INTEGRITY` [set by default]
 - `BT_TYPEAHEAD_VERSION`: the version of bootstrap-3-typeahead to load from
   cdnjs [4.0.2].
+- `BT_TYPEAHEAD_VERSION`: the version of jQuery-scrollTo to load from cdnjs
+  [2.1.0].
 - `BT_SELECT2_VERSION`: the version of Select2 to load from cdnjs [4.0.3].
 - `BT_VIEWPORT_SCALE`: enable the viewport meta tag [True]
 
@@ -132,19 +134,62 @@ to be defined.
 This piece works well when placed in the `extra_header` block from
 `default.html`.
 
-## Template Tags
+## Template Tags and Filters
 
-### setting
+### setting (tag)
 
 Retrieves a Django setting. If a context variable exists with the exact same
 name, that will be returned instead, to allow per-view overrides.
 
-### script
+### script (tag)
 
 Generates a script tag given a source URL, with optional SRI argument.
 If the location does not match the current domain (starts with "https://"),
 `crossorigin="anonymous"` is applied as well.
 
-### style
+### style (tag)
 
 Identical to the above, except for stylesheets.
+
+### break_punctuation (filter)
+
+Inserts <wbr> tags after all sequences of "non-word characters".
+
+### order_by(args) (filter)
+
+Orders the given queryset by the given args, a comma-separated string.
+
+## Extra CSS Classes
+
+### Responsive Tables
+
+#### `.bt-table-responsive`
+
+Fixes the current Bootstrap 4 issue where responsive tables try to behave
+responsively even on larger screens. The 992px breakpoint has been used.
+
+The following three classes must be children of a `.bt-table-responsive`
+
+##### `.table-col-xs
+
+Sets a minimum width of 6rem.
+
+##### `.table-col-sm`
+
+Sets a minimum width of 8rem.
+
+##### `.table-col-md`
+
+Sets a minimum width of 12rem.
+
+##### `.table-col-lg`
+
+Sets a minimum width of 16rem.
+
+##### `.table-col-xl`
+
+Sets a minimum width of 20rem.
+
+##### `.table-col-break`
+
+Allows long columns to be broken even against normal rules.
