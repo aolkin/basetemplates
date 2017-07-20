@@ -17,7 +17,7 @@
       {% block sidebar_menu_item %}
       <li class="nav-item">
 	<a class="nav-link{% if item.active %} active{% endif %}{% if not title %} bt-title-link{% endif %}"
-	   {% if item.url %}href="{{ item.url }}"{% endif %}>
+	   {% if item.url or item.url == "" %}href="{{ item.url }}"{% endif %}>
 	  {% if not title %}<h5 class="mb-2 mt-2">{% endif %}
 	    {{ item.name }}
 	  {% if not title %}</h5>{% endif %}
