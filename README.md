@@ -82,10 +82,16 @@ iterables of menu items. Each item may then optionally have `url` and
 - `BT_JQUERY_JS_INTEGRITY` [set by default]
 - `BT_TYPEAHEAD_VERSION`: the version of bootstrap-3-typeahead to load from
   cdnjs [4.0.2].
-- `BT_TYPEAHEAD_VERSION`: the version of jQuery-scrollTo to load from cdnjs
+- `BT_SCROLLTO_VERSION`: the version of jQuery-scrollTo to load from cdnjs
   [2.1.0].
 - `BT_SELECT2_VERSION`: the version of Select2 to load from cdnjs [4.0.3].
+- `BT_FONTAWESOME_VERSION`: the version of Font Awesome to load from the
+  Bootstrap CDN.
+- `BT_FONTAWESOME_CSS_INTEGRITY` [set by default]
 - `BT_VIEWPORT_SCALE`: enable the viewport meta tag [True]
+
+Note that if the jQuery of Font Awesome versions are changed, the corresponding
+SRI options must be set.
 
 ### Settings used by the default template
 
