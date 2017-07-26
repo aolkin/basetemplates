@@ -23,6 +23,8 @@ def get_setting(name, context={}):
         return context[name]
     if hasattr(settings, name):
         return getattr(settings, name)
+    elif hasattr(settings, name[3:]):
+        return getattr(settings, name[3:])
     else:
         return DEFAULT_SETTINGS.get(name,"")
 
