@@ -1,5 +1,5 @@
 <div class="dropdown bt-header-dropdown">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+  <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
     Welcome{% if request.user.is_authenticated %}, {{ request.user.get_short_name }}{% endif %}
   </button>
   <div class="dropdown-menu">
