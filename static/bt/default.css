@@ -26,15 +26,32 @@
 }
 
 .bt-sidebar {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    z-index: 1000;
     padding: 0.5em 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    border: 1px solid #eee;
-    border-left-width: 0;
+}
+
+@media (min-width: 576px) {
+    .bt-sidebar {
+	position: absolute;
+	left: 0;
+	height: 100%;
+	z-index: 1000;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 1px solid #eee;
+	border-left-width: 0;
+    }
+
+    .bt-sidebar .navbar-collapse {
+	display: block!important;
+    }
+
+    .bt-sidebar .navbar-toggler {
+	display: none!important;
+    }
+    
+    .bt-sidebar .nav-link {
+	border-radius: 0;
+    }
 }
 
 .bt-sidebar .nav-item {
@@ -42,7 +59,6 @@
 }
 
 .bt-sidebar .nav-link {
-    border-radius: 0;
     padding: 0 1em 0 2em;
 }
 
