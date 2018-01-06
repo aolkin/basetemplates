@@ -3,6 +3,7 @@ from django.conf import settings
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html, conditional_escape
 from django.contrib.staticfiles import finders
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 import re, string
 
@@ -67,7 +68,7 @@ def _bt_app_style(context):
     if match.app_name:
         fn = finders.find(match.app_name + ".css")
         if fn:
-            return style(settings.STATIC_URL + "/" + match.app_name + ".css")
+            return style(static(match.app_name + ".css"))
     return ""
 
 @register.simple_tag(takes_context=True)
@@ -77,10 +78,10 @@ def _bt_app_script(context):
     if match.app_name:
         fn = finders.find(match.app_name + ".js")
         if fn:
-            out += script(settings.STATIC_URL + match.app_name + ".js")
+            out += script(static(match.app_name + ".js"))
         if match.url_name:
             fn = finders.find(match.app_name + "/" + match.url_name + ".js")
             if fn:
-                out += script(settings.STATIC_URL + match.app_name + "/" +
-                              match.url_name + ".js")
+                out += script(static(match.app_name + "/" +
+                                     match.url_name + ".js"))
     return out
