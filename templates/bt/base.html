@@ -11,10 +11,10 @@
     {% _bt_style "https://cdnjs.cloudflare.com/ajax/libs/select2/{}/css/select2.min.css" "select2" %}
     <link rel="icon" href="{% setting 'BT_FAVICON_URL' %}" />
     {% style "bt/default.css" %}
-    {% _bt_app_style %}
     {% for path in BT_styles %}
     {% style path %}
     {% endfor %}
+    {% _bt_app_style %}
   </head>
   <body class="app-{{ request.resolver_match.app_name }} view-{{ request.resolver_match.url_name }}">
     {% block body %}{% endblock %}
@@ -25,10 +25,10 @@
     {% _bt_script "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/{}/bootstrap3-typeahead.min.js" "typeahead" %}
     {% _bt_script "https://cdnjs.cloudflare.com/ajax/libs/select2/{}/js/select2.min.js" "select2" %}
     {% _bt_script "https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/{}/jquery.scrollTo.min.js" "scrollto" %}
-    {% _bt_app_script %}
     {% for path in BT_scripts %}
     {% script path %}
     {% endfor %}
+    {% _bt_app_script %}
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
