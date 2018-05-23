@@ -36,6 +36,8 @@ def res_extra(src, integrity=""):
 
 @register.simple_tag
 def script(src, integrity=""):
+    if "//" not in src:
+        src = static(src)
     return format_html('<script src="{}"' + res_extra(src, integrity) +
                        '></script>', src)
 
@@ -50,6 +52,8 @@ def _bt_script(src, name):
 
 @register.simple_tag
 def style(src, integrity=""):
+    if "//" not in src:
+        src = static(src)
     return format_html('<link rel="stylesheet" href="{}"' +
                        res_extra(src, integrity) +'>', src)
 
