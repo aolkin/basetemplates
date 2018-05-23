@@ -72,7 +72,7 @@ def _bt_app_style(context):
     if match.app_name:
         fn = finders.find(match.app_name + ".css")
         if fn:
-            return style(static(match.app_name + ".css"))
+            return style(match.app_name + ".css")
     return ""
 
 @register.simple_tag(takes_context=True)
@@ -82,10 +82,10 @@ def _bt_app_script(context):
     if match.app_name:
         fn = finders.find(match.app_name + ".js")
         if fn:
-            out += script(static(match.app_name + ".js"))
+            out += script(match.app_name + ".js")
         if match.url_name:
             fn = finders.find(match.app_name + "/" + match.url_name + ".js")
             if fn:
-                out += script(static(match.app_name + "/" +
-                                     match.url_name + ".js"))
+                out += script(match.app_name + "/" +
+                              match.url_name + ".js")
     return out
