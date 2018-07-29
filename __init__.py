@@ -2,7 +2,7 @@ from django.conf import settings
 
 DEFAULT_SETTINGS = {
     "BT_VIEWPORT_SCALE": True,
-    "BT_BOOTSTRAP_VERSION": "3.3.7",
+    "BT_BOOTSTRAP_VERSION": "4.1.3",
     "BT_JQUERY_VERSION": "3.3.1",
     "BT_JQUERY_JS_INTEGRITY": "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
     "BT_TYPEAHEAD_VERSION": "4.0.2",
