@@ -69,7 +69,7 @@ def _bt_style(src, name):
 @register.simple_tag(takes_context=True)
 def _bt_app_style(context):
     match = context["request"].resolver_match
-    if match.app_name:
+    if match and match.app_name:
         fn = finders.find(match.app_name + ".css")
         if fn:
             return style(match.app_name + ".css")
@@ -79,7 +79,7 @@ def _bt_app_style(context):
 def _bt_app_script(context):
     out = mark_safe("")
     match = context["request"].resolver_match
-    if match.app_name:
+    if match and match.app_name:
         fn = finders.find(match.app_name + ".js")
         if fn:
             out += script(match.app_name + ".js")
