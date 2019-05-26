@@ -15,7 +15,7 @@ register = template.Library()
 def setting(context, name):
     return mark_safe(get_setting(name, context))
 
-PUNCTUATION_RE = re.compile(r"(\W+)")
+PUNCTUATION_RE = re.compile(r"([ .,/)\]}!@%&+=\-;:?]+)")
 
 @register.filter(name="break_punctuation")
 def break_punctuation(value):
@@ -66,7 +66,7 @@ def _bt_style(src, name):
 @register.simple_tag(takes_context=True)
 def _bt_app_style(context):
     match = context["request"].resolver_match
-    if match.app_name:
+    if match and match.app_name:
         fn = finders.find(match.app_name + ".css")
         if fn:
             return style(match.app_name + ".css")
@@ -76,7 +76,7 @@ def _bt_app_style(context):
 def _bt_app_script(context):
     out = mark_safe("")
     match = context["request"].resolver_match
-    if match.app_name:
+    if match and match.app_name:
         fn = finders.find(match.app_name + ".js")
         if fn:
             out += script(match.app_name + ".js")
