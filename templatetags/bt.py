@@ -27,18 +27,15 @@ def order_by(qs, args):
     args = [x.strip() for x in args.split(',')]
     return qs.order_by(*args)
 
-def res_extra(src, integrity=""):
-    crossorigin = (' crossorigin="anonymous"' if src.startswith("https://")
-                   else '')
-    if integrity:
-        integrity = format_html(' integrity="{}"', integrity)
-    return integrity + crossorigin
+def res_extra(integrity=""):
+    return integrity and format_html(
+        ' integrity="{}" crossorigin="anonymous"', integrity)
 
 @register.simple_tag
 def script(src, integrity=""):
     if "//" not in src:
         src = static(src)
-    return format_html('<script src="{}"' + res_extra(src, integrity) +
+    return format_html('<script src="{}"' + res_extra(integrity) +
                        '></script>', src)
 
 @register.simple_tag
@@ -55,7 +52,7 @@ def style(src, integrity=""):
     if "//" not in src:
         src = static(src)
     return format_html('<link rel="stylesheet" href="{}"' +
-                       res_extra(src, integrity) +'>', src)
+                       res_extra(integrity) +'>', src)
 
 @register.simple_tag
 def _bt_style(src, name):
