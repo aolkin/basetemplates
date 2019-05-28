@@ -15,6 +15,10 @@ register = template.Library()
 def setting(context, name):
     return mark_safe(get_setting(name, context))
 
+@register.filter(name="getattr")
+def getattr_filter(value, arg):
+    return getattr(value, arg, "")
+
 PUNCTUATION_RE = re.compile(r"([ .,/)\]}!@%&+=\-;:?]+)")
 
 @register.filter(name="break_punctuation")
