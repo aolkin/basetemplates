@@ -108,3 +108,15 @@
 }
 
 wbr:after { content: "\00200B"; }
+
+@media print {
+    .bt-sidebar {
+	display: none;
+    }
+
+    .bt-sidebar-content {
+	margin-left: auto;
+	flex: 0 0 100%;
+	max-width: 100%;
+    }
+}
