@@ -157,6 +157,10 @@ If the location does not match the current domain (starts with "https://"),
 
 Identical to the above, except for stylesheets.
 
+### getattr (filter)
+
+Calls getattr, allows retrieving variable attributes.
+
 ### break_punctuation (filter)
 
 Inserts <wbr> tags after all sequences of "non-word characters".
