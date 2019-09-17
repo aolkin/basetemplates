@@ -15,6 +15,18 @@
     {% style path %}
     {% endfor %}
     {% _bt_app_style %}
+
+    {% if SETTINGS.BT_GTAG_ID %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ SETTINGS.BT_GTAG_ID }}"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     
+     gtag('config', '{{ SETTINGS.BT_GTAG_ID }}');
+    </script>
+    {% endif %}
   </head>
   <body class="app-{{ request.resolver_match.app_name }} view-{{ request.resolver_match.url_name }}">
     {% block body %}{% endblock %}
