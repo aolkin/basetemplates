@@ -10,9 +10,10 @@
     <a href="{% url 'admin:index' %}" class="dropdown-item">Site Admin</a>
     {% endif %}
     <div class="dropdown-divider"></div>
-    <a href="{% url BT_user_logout %}" class="dropdown-item">Logout</a>
+    <a href="{% url SETTINGS.LOGOUT_URL %}" class="dropdown-item">Logout</a>
     {% else %}
     {% block user_menu_actions %}{% endblock %}
+    <a href="{% url SETTINGS.LOGIN_URL %}" class="dropdown-item">Login</a>
     {% endif %}
   </div>
 </div>
