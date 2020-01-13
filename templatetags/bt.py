@@ -88,6 +88,5 @@ def _bt_app_script(context):
         app_path = match.app_name + "/" if match.app_name else ""
         fn = finders.find(app_path + match.url_name + ".js")
         if fn:
-            out += script(match.app_name + "/" +
-                          match.url_name + ".js")
+            out += script(app_path + match.url_name + ".js")
     return out
