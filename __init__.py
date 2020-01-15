@@ -40,5 +40,6 @@ def context_processor(request):
     context["BT_header_image"] = get_setting("BT_HEADER_IMAGE")
     context["BT_footer_site"] = get_setting("BT_FOOTER_SITE")
     context["BT_include_messages"] = get_setting("BT_INCLUDE_MESSAGES")
+    context["BT_messages_column_spec"] = get_setting("BT_MESSAGES_COLUMN_SPEC")
     context["SETTINGS"] = settings
     return context

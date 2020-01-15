@@ -1,7 +1,7 @@
 {% if messages %}
 {% load bt %}
 <div class="row justify-content-center bt-messages">
-  <div class="{% setting 'BT_MESSAGES_COLUMN_SPEC' %}">
+  <div class="{{ BT_messages_column_spec }}">
     {% for message in messages %}
     <div class="alert alert-{{ message.level_tag }} fade show {% if message.tags %}{{ message.tags }}{% endif %}">
       {% if "html-safe" in message.tags %}
