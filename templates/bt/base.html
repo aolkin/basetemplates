@@ -6,6 +6,10 @@
     <title>{% block title %}{% endblock %}{{ BT_site_title }}</title>
 
     {% if BT_viewport_scale %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endif %}
+    {% if SETTINGS.BT_THEME_COLOR %}
+    <meta name="theme-color" content="{{ SETTINGS.BT_THEME_COLOR }}">
+    <meta name="msapplication-navbutton-color" content="{{ SETTINGS.BT_THEME_COLOR }}">
+    {% endif %}
     {% _bt_style "https://stackpath.bootstrapcdn.com/bootstrap/{}/css/bootstrap.min.css" "bootstrap" %}
     {% _bt_style "https://stackpath.bootstrapcdn.com/font-awesome/{}/css/font-awesome.min.css" "fontawesome" %}
     {% _bt_style "https://cdnjs.cloudflare.com/ajax/libs/select2/{}/css/select2.min.css" "select2" %}
