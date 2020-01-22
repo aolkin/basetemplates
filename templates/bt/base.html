@@ -29,6 +29,9 @@
      gtag('js', new Date());
      
      gtag('config', '{{ SETTINGS.BT_GTAG_ID }}');
+     {% if not request.user.is_anonymous %}
+     gtag('set', {'user_id': '{{ request.user.id }}'});
+     {% endif %}
     </script>
     {% endif %}
   </head>
