@@ -28,9 +28,12 @@
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
      
+     {% if request.user.is_anonymous %}
      gtag('config', '{{ SETTINGS.BT_GTAG_ID }}');
-     {% if not request.user.is_anonymous %}
-     gtag('set', {'user_id': '{{ request.user.id }}'});
+     {% else %}
+     gtag('config', '{{ SETTINGS.BT_GTAG_ID }}', {
+	 'user_id': '{{ request.user.id }}',
+     });
      {% endif %}
     </script>
     {% endif %}
