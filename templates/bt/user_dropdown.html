@@ -1,4 +1,4 @@
-<div class="dropdown bt-header-dropdown">
+<div class="dropdown bt-header-dropdown d-print-none">
   <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
     Welcome{% if request.user.is_authenticated %}, {{ request.user.get_short_name }}{% endif %}
   </button>
