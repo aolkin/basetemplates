@@ -36,7 +36,11 @@
 	 'user_id': '{{ request.user.id }}',
      });
      {% endif %}
-     {% endif %}
+    </script>
+    {% endif %}
+    {% elif SETTINGS.DEBUG %}
+    <script>
+     function gtag() { console.log("GTAG", arguments); }
     </script>
     {% endif %}
   </head>
