@@ -21,6 +21,7 @@
     {% _bt_app_style %}
 
     {% if SETTINGS.BT_GTAG_ID %}
+    {% if not request.user.is_superuser or SETTINGS.BT_GTAG_INCLUDE_SUPERUSERS %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ SETTINGS.BT_GTAG_ID }}"></script>
     <script>
@@ -34,6 +35,7 @@
      gtag('config', '{{ SETTINGS.BT_GTAG_ID }}', {
 	 'user_id': '{{ request.user.id }}',
      });
+     {% endif %}
      {% endif %}
     </script>
     {% endif %}
